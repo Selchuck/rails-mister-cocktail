@@ -7,9 +7,31 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <div class="navbar navbar-expand-lg navbar-expand-md navbar-light navbar-lewagon fixed-top">
+      <%= link_to "#", class: "navbar-brand" do %>
+      <i class="fas fa-wine-bottle"></i>
+      <% end %>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", "/", class: "nav-link nav-link-color" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+      <%= yield %>
+      <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
+      <%= javascript_pack_tag "application" %>
+    </body>
 </html>

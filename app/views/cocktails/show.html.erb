@@ -1,0 +1,9 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1444728399417-08d2aa39e6f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
+  <h1>
+    <%= @cocktail.name %>
+  </h1>
+  <div class="links d-flex justify-content-around" >
+    <%= link_to "Go back",root_path, class: "btn"  %>
+    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn" %>
+  </div>
+</div>

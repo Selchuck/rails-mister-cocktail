@@ -1,0 +1,36 @@
+.btn-main {
+  color: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: #3384f1;
+  transition: color 0.4s ease;
+}
+
+.btn-main:hover {
+  color: black;
+  text-decoration: none;
+}
+
+
+.btn {
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #33c1f1;
+  height: 32px;
+  margin-left: 16px;
+  transition: color 0.8s ease;
+}
+
+.btn:hover {
+  color: black;
+}
+
+.btn-cancel {
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #f19233;
+  transition: color 0.4s ease;
+  margin-left: 16px;
+}
