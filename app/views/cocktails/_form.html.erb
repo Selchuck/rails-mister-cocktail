@@ -2,9 +2,12 @@
 
   <div class="form-input">
     <%= f.input :name, placeholder: "Old fashioned" %>
+    <%= f.input :image %>
+    <%= f.input :image_cache, as: :hidden %>
   </div>
 
   <div class="form-actions">
-    <%= f.submit "Submit", class: "btn-main" %>
+    <%= f.submit "Submit", class: "btn" %>
+    <%= link_to 'Cancel', cocktails_path, class: "btn-cancel" %>
   </div>
 <% end %>

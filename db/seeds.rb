@@ -8,7 +8,7 @@
 require 'open-uri'
 require 'json'
 
-puts 'Cleaning Data Base'
+puts 'Cleaning Database'
 Ingredient.destroy_all
 puts 'Creating Ingredients...'
 
@@ -20,4 +20,4 @@ cocktail_list.each do |drink|
   p drink['strIngredient1']
 end
 
-puts 'This is the end..!'
+puts 'It\s time for a drink'

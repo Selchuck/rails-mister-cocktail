@@ -1,9 +1,9 @@
 .btn-main {
   color: white;
-  padding: 8px 10px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 8px;
   background: #3384f1;
-  transition: color 0.4s ease;
+  transition: color 0.8s ease;
 }
 
 .btn-main:hover {
@@ -24,6 +24,7 @@
 
 .btn:hover {
   color: black;
+  text-decoration: none;
 }
 
 .btn-cancel {
@@ -31,6 +32,11 @@
   padding: 4px 10px;
   border-radius: 8px;
   background: #f19233;
-  transition: color 0.4s ease;
+  transition: color 0.8s ease;
   margin-left: 16px;
+}
+
+.btn-cancel:hover {
+  color: black;
+  text-decoration: none;
 }
