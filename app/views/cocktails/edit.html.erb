@@ -1,0 +1,13 @@
+<div class="form-page pt-3">
+  <div class="form-div container pt-3">
+    <h1>Edit Cocktail</h1>
+
+    <%= simple_form_for([@cocktail, @dose]) do |f| %>
+
+      <div class="form-inputs">
+        <%= render 'form' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

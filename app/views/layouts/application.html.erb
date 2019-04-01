@@ -12,26 +12,31 @@
   </head>
 
   <body>
-    <div class="navbar navbar-expand-lg navbar-expand-md navbar-light navbar-lewagon fixed-top">
-      <%= link_to "#", class: "navbar-brand" do %>
-      <i class="fas fa-wine-bottle"></i>
+    <div class="navbar navbar-expand-lg navbar-expand-md navbar-light navbar-lewagon">
+      <%= link_to "/", class: "navbar-brand" do %><i class="fas fa-cocktail"></i>
       <% end %>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to "Home", "/", class: "nav-link nav-link-color" %>
-          </li>
-        </ul>
+      <div>
+        <form class="form-inline">
+        <input class="form-control mr-sm-2" type="text" name="query" id="search" placeholder="Search cocktails" aria-label="Search">
+        <input class="btn" type="submit" value="search">
+        </form>
       </div>
     </div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    </div>
       <%= yield %>
       <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
       <%= javascript_pack_tag "application" %>
+      <footer>
+      <div class="footer-container">
+        <nav>
+          <ul>
+            <li><%= link_to "Contact Us", "#" %></li>
+            <li><%= link_to "Terms of Use", "#" %></li>
+            <li><%= link_to "Privacy Policy", "#" %></li>
+            <li><a href="https:selchuk-karakus.dev">© 2019 Copyright: Selchuk-karakus.dev</a></li>
+          </ul>
+        </nav>
+      </div>
+      </footer>
     </body>
 </html>

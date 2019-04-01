@@ -1,8 +1,13 @@
 class CocktailsController < ApplicationController
-  before_action :make_cocktail, only: [:show]
+  before_action :make_cocktail, only: [:show, :edit]
 
   def index
-    @cocktails = Cocktail.all
+    @query = params[:query]
+    @cocktails = if @query
+                   Cocktail.where('LOWER(name) like ?', "%#{@query.downcase}%")
+                 else
+                   Cocktail.all
+                 end
   end
 
   def show
@@ -10,6 +15,15 @@ class CocktailsController < ApplicationController
 
   def new
     @cocktail = Cocktail.new
+  end
+
+  def edit
+  end
+
+  def update
+    @cocktails = Cocktail.find(params[:id])
+    @cocktails.update(cocktail_params)
+    redirect_to cocktails_path(@cocktails)
   end
 
   def create
@@ -21,6 +35,11 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy
+    @cocktails = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to cocktails_path
+  end
   private
 
   def make_cocktail

@@ -3,7 +3,8 @@
   padding: 4px 10px;
   border-radius: 8px;
   background: #3384f1;
-  transition: color 0.8s ease;
+  transition: color 0.7s ease;
+  margin-left: 2px;
 }
 
 .btn-main:hover {
@@ -16,10 +17,16 @@
   color: white;
   padding: 4px 10px;
   border-radius: 8px;
-  background: #33c1f1;
-  height: 32px;
-  margin-left: 16px;
-  transition: color 0.8s ease;
+  background: #1d7e9e;
+  transition: color 0.7s ease;
+}
+
+.btn-delete {
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #696464;
+  transition: color 0.7s ease;
 }
 
 .btn:hover {
@@ -28,15 +35,20 @@
 }
 
 .btn-cancel {
+  margin-left: 2px;
   color: white;
   padding: 4px 10px;
   border-radius: 8px;
   background: #f19233;
-  transition: color 0.8s ease;
-  margin-left: 16px;
+  transition: color 0.7s ease;
 }
 
 .btn-cancel:hover {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
   color: black;
   text-decoration: none;
 }

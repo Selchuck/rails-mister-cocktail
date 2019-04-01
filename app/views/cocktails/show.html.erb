@@ -1,12 +1,41 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1444728399417-08d2aa39e6f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
-  <div class="container">
-  <h1>
-    <%= @cocktail.name.capitalize %>
-  </h1>
+<div class="container">
 
-  <div class="links d-flex justify-content-between" >
-    <%= link_to "Go back",root_path, class: "btn"  %>
-    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn" %>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <h1>
+        <%= @cocktail.name.capitalize %>
+      </h1>
+    </div>
+
+    <div class="container container-show">
+        <p><%= cl_image_tag @cocktail.image, height: 300, width: 400, crop: :fill %></p>
+
+        <div class="py-3 px-5">
+          <div class="p-3 border-bottom">
+            <h2>Description</h2>
+
+            <p>This one’s for the cocktail drinkers. The out-there thinkers. Rule breakers. Risk-takers. Memory makers. For the ones who are strong. Be loud. Be wrong. Be game. Be brave. Be bold. For the classy. And the blessed. For the sassy. And the rest. Be badass. Be true. When temptation gets too much. Your secret’s safe with us. Be naughty. Be nice. Don’t think twice. For the gin sippin’, hair flippin’. B*tches be trippin’. For when it’s that kinda night. And when it’s not. You can have it all. It’s your call.</p>
+          </div>
+
+          <h2>Ingredient list:</h2>
+          <ul>
+            <%  @cocktail.doses.each do |dose| %>
+            <div class= "d-flex justify-content-between">
+              <li><%= dose.ingredient.name %>: <%= dose.description %> </li>
+              <%= link_to "Delete", dose_path(dose.id) , class: "btn-delete", method: :delete, data: { confirm: "DELETE! Are you sure?"} %>
+
+            </div>
+
+          <% end %>
+          </ul>
+        </div>
+      </div>
+
+    <div class="links d-flex justify-content-start">
+      <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn" %>
+      <%= link_to "Cancel",root_path, class: "btn-cancel"  %>
+      <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "btn-main"  %>
+    </div>
   </div>
-  </div>
+
 </div>
