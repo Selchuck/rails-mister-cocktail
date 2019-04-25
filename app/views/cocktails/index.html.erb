@@ -14,10 +14,10 @@
   <h2>Dizzy Lizzy Cocktail List</h2>
   <div class="cards" >
     <% @cocktails.each do |cocktail| %>
-    <div class="card-category">
-      <%= cl_image_tag cocktail.image, height: 300, width: 400, crop: :fill %>
-      <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-link" %>
-    </div>
+      <div class="card-category">
+        <%= cl_image_tag cocktail.image, height: 300, width: 400, crop: :fill %>
+        <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-link" %>
+      </div>
     <% end %>
   </div>
 </div>
