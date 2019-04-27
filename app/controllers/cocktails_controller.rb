@@ -2,8 +2,6 @@ class CocktailsController < ApplicationController
   before_action :make_cocktail, only: [:show, :edit]
 
   def index
-    # byebug
-
     @query = params[:query]
     @cocktails = if @query
                    Cocktail.where('LOWER(name) like ?', "%#{@query.downcase}%")
