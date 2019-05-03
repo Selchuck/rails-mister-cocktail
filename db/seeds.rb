@@ -8,16 +8,27 @@
 require 'open-uri'
 require 'json'
 
-puts 'Cleaning Database'
+# puts 'Cleaning Database'
+# Ingredient.destroy_all
+# puts 'Creating Ingredients...'
+
+# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+# cocktail_list = JSON.parse(open(url).read)
+
+# cocktail_list.each do |drink|
+#   Ingredient.create(name: drink['strIngredient1'])
+#   p drink['strIngredient1']
+# end
+
+# puts 'It\s time for a drink'
+
 Ingredient.destroy_all
-puts 'Creating Ingredients...'
+Dose.destroy_all
 
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-cocktail_list = JSON.parse(open(url).read)
+read_ingredients = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read
 
-cocktail_list.each do |drink|
-  Ingredient.create(name: drink['strIngredient1'])
-  p drink['strIngredient1']
+ingredients = JSON.parse(read_ingredients)
+
+ingredients['drinks'].each do |ingredient|
+  Ingredient.create!(name: ingredient['strIngredient1'])
 end
-
-puts 'It\s time for a drink'
